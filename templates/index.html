@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погодный маршрут</title>
+</head>
+<body>
+    <h1>Проверка погодных условий</h1>
+    <form action="/check-weather" method="POST">
+        <label for="start_city">Начальный пункт:</label>
+        <input type="text" id="start_city" name="start_city" required>
+        <br>
+        <label for="end_city">Конечный пункт:</label>
+        <input type="text" id="end_city" name="end_city" required>
+        <br>
+        <button type="submit">Проверить погоду</button>
+    </form>
+</body>
+</html>
