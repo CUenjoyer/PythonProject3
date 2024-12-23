@@ -1,16 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Результаты</title>
+    <title>Результаты прогноза</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; 
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .city-block {
+            margin: 20px 0;
+            background: #f9f9ff;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        .summary-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        a {
+            display: block;
+            width: 250px;
+            margin: 30px auto 0 auto;
+            text-align: center;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Результаты прогноза</h1>
-    <h2>Начальный пункт: {{ start_city }}</h2>
-    <p>{{ start_conditions }}</p>
-    <h2>Конечный пункт: {{ end_city }}</h2>
-    <p>{{ end_conditions }}</p>
-    <a href="/">Вернуться на главную</a>
+    <div class="container">
+        <h1>Результаты прогноза</h1>
+        <h2>Сводка по каждому городу (ближайший час)</h2>
+        {% for city, desc in summary_list %}
+        <div class="city-block">
+            <div class="summary-title">{{ city }}</div>
+            <div>{{ desc }}</div>
+        </div>
+        {% endfor %}
+
+        <a href="/visualization/">Посмотреть визуализацию</a>
+    </div>
 </body>
 </html>

@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ошибка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; 
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #cc0000;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        a {
+            display: block;
+            width: 200px;
+            margin: 30px auto 0 auto;
+            text-align: center;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Произошла ошибка</h1>
-    <p>{{ error }}</p>
-    <a href="/">Вернуться на главную</a>
+    <div class="container">
+        <h1>Произошла ошибка</h1>
+        <p>{{ error }}</p>
+        <a href="/">Вернуться на главную</a>
+    </div>
 </body>
 </html>

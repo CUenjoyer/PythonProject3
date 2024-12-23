@@ -1,20 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Погодный маршрут</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; 
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-size: 16px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 15px;
+            width: 100%;
+            padding: 12px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Проверка погодных условий</h1>
-    <form action="/check-weather" method="POST">
-        <label for="start_city">Начальный пункт:</label>
-        <input type="text" id="start_city" name="start_city" required>
-        <br>
-        <label for="end_city">Конечный пункт:</label>
-        <input type="text" id="end_city" name="end_city" required>
-        <br>
-        <button type="submit">Проверить погоду</button>
-    </form>
+    <div class="container">
+        <h1>Погодный маршрут</h1>
+        <p>Введите несколько городов через запятую (например: <b>Москва, Уфа, Казань</b>)</p>
+        <form action="/check-weather" method="POST">
+            <label for="cities">Города:</label>
+            <input type="text" id="cities" name="cities" placeholder="Москва, Уфа, Казань" required>
+            <button type="submit">Узнать прогноз</button>
+        </form>
+    </div>
 </body>
 </html>

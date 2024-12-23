@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визуализация маршрута</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            margin: 20px auto;
+            max-width: 900px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 18px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Визуализация маршрута</h1>
+
+    <div class="container">
+        <h2>Карта маршрута</h2>
+        <iframe srcdoc="{{ map_fig | safe }}"></iframe>
+    </div>
+
+    <div class="container">
+        <h2>График прогноза погоды</h2>
+        <iframe srcdoc="{{ graph_fig | safe }}"></iframe>
+    </div>
+
+    <div class="container">
+        <a href="/">Вернуться на главную</a>
+    </div>
+</body>
+</html>
